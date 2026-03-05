@@ -1,37 +1,62 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Services", href: "#services" },
-  { label: "À Propos", href: "#apropos" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "À Propos", href: "/#apropos" },
+  { label: "Équipe", href: "/equipe" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    if (href.startsWith("/#")) {
+      if (location.pathname === "/") {
+        const el = document.querySelector(href.replace("/", ""));
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#accueil" className="font-heading text-2xl font-bold tracking-tight text-primary">
-          D&C
-        </a>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="D&C Agro" className="h-12 w-auto" />
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("/#") ? (
+              <a
+                key={link.href}
+                href={link.href.replace("/", "")}
+                onClick={() => handleNavClick(link.href)}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <a
-            href="#contact"
+            href="/#contact"
             className="gradient-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Demander un devis
@@ -58,18 +83,29 @@ const Navbar = () => {
             className="md:hidden bg-card border-b border-border overflow-hidden"
           >
             <div className="flex flex-col items-center gap-4 py-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-primary font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.href.startsWith("/#") ? (
+                  <a
+                    key={link.href}
+                    href={link.href.replace("/", "")}
+                    className="text-foreground/80 hover:text-primary font-medium"
+                    onClick={() => handleNavClick(link.href)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-foreground/80 hover:text-primary font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <a
-                href="#contact"
+                href="/#contact"
                 className="gradient-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold"
                 onClick={() => setIsOpen(false)}
               >

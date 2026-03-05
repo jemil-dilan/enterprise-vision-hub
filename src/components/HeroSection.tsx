@@ -23,7 +23,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <p className="text-secondary font-semibold text-sm uppercase tracking-[0.2em] mb-4">
-            Production · Agriculture · Maritime
+            Réflexion · Innovation · Solutions
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-primary-foreground leading-tight max-w-4xl mx-auto">
             Votre partenaire en{" "}

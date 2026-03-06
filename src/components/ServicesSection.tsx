@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Ship, Tractor, Truck, Briefcase } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import serviceShip from "@/assets/service-ship.jpg";
 import serviceAgri from "@/assets/service-agri.jpg";
 import serviceDelivery from "@/assets/service-delivery.jpg";
@@ -12,6 +13,7 @@ const services = [
     description:
       "Approvisionnement des navires en équipements, pièces de rechange et produits alimentaires. Un service fiable et rapide pour la flotte maritime.",
     image: serviceShip,
+    link: "/shipchandler",
   },
   {
     icon: Tractor,
@@ -46,6 +48,7 @@ const cardVariants = {
 };
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -68,7 +71,8 @@ const ServicesSection = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={cardVariants}
-              className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-300"
+              className={`group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-card-hover transition-shadow duration-300 ${service.link ? "cursor-pointer" : ""}`}
+              onClick={() => service.link && navigate(service.link)}
             >
               <div className="h-52 overflow-hidden">
                 <img

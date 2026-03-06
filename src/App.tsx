@@ -10,6 +10,9 @@ import FAQ from "./pages/FAQ";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
+import ShipchandlerLogin from "./pages/ShipchandlerLogin";
+import ShipchandlerCatalog from "./pages/ShipchandlerCatalog";
+import Subscriptions from "./pages/Subscriptions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/connexion" element={<Login />} />
           <Route path="/inscription" element={<Register />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/shipchandler" element={<ShipchandlerLogin />} />
+          <Route path="/shipchandler/catalogue" element={<ShipchandlerCatalog />} />
+          <Route path="/abonnements" element={<Subscriptions />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -31,6 +31,7 @@ const Catalog = () => {
   const [cart, setCart] = useState<number[]>([]);
 
   const filtered = mockProducts.filter((p) => {
+    if (p.category === "shipchandler") return false;
     const matchCat = activeCategory === "all" || p.category === activeCategory;
     const matchSearch = p.name.toLowerCase().includes(search.toLowerCase());
     return matchCat && matchSearch;

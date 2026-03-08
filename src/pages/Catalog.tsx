@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 
 const categories = [
   { id: "all", label: "Tous", icon: Filter },
-  { id: "shipchandler", label: "Shipchandler", icon: Ship },
   { id: "agricole", label: "Agricole", icon: Tractor },
   { id: "livraison", label: "Livraison", icon: Truck },
   { id: "conseil", label: "Conseil", icon: Briefcase },

@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 
 const categories = [
   { id: "all", label: "Tous", icon: Filter },
-  { id: "shipchandler", label: "Shipchandler", icon: Ship },
   { id: "agricole", label: "Agricole", icon: Tractor },
   { id: "livraison", label: "Livraison", icon: Truck },
   { id: "conseil", label: "Conseil", icon: Briefcase },
@@ -32,6 +31,7 @@ const Catalog = () => {
   const [cart, setCart] = useState<number[]>([]);
 
   const filtered = mockProducts.filter((p) => {
+    if (p.category === "shipchandler") return false;
     const matchCat = activeCategory === "all" || p.category === activeCategory;
     const matchSearch = p.name.toLowerCase().includes(search.toLowerCase());
     return matchCat && matchSearch;

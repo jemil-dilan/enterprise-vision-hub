@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { Search, Filter, ShoppingCart, Ship, Tractor, Truck, Briefcase } from "lucide-react";
+import { Search, Filter, Tractor, Truck, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CartDrawer from "@/components/CartDrawer";
+import { useCart } from "@/context/CartContext";
+import { useToast } from "@/hooks/use-toast";
+import { ShoppingCart } from "lucide-react";
 
 const categories = [
   { id: "all", label: "Tous", icon: Filter },
@@ -28,7 +32,8 @@ const mockProducts = [
 const Catalog = () => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
-  const [cart, setCart] = useState<number[]>([]);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const filtered = mockProducts.filter((p) => {
     if (p.category === "shipchandler") return false;
@@ -37,15 +42,15 @@ const Catalog = () => {
     return matchCat && matchSearch;
   });
 
-  const addToCart = (id: number) => {
-    setCart((prev) => [...prev, id]);
+  const handleAdd = (product: typeof mockProducts[0]) => {
+    addItem({ id: product.id, name: product.name, price: product.price, image: product.image, category: product.category });
+    toast({ title: "Ajouté au panier", description: product.name });
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-20 pb-16">
-        {/* Header */}
         <div className="bg-primary/5 py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">
@@ -58,31 +63,14 @@ const Catalog = () => {
         </div>
 
         <div className="container mx-auto px-4 mt-8">
-          {/* Search & Filters */}
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
-              <Input
-                placeholder="Rechercher un produit..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="pl-10"
-              />
+              <Input placeholder="Rechercher un produit..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-10" />
             </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" className="relative">
-                <ShoppingCart size={18} />
-                <span className="ml-2">Panier</span>
-                {cart.length > 0 && (
-                  <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs">
-                    {cart.length}
-                  </Badge>
-                )}
-              </Button>
-            </div>
+            <CartDrawer />
           </div>
 
-          {/* Category Tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
             {categories.map((cat) => (
               <button
@@ -100,7 +88,6 @@ const Catalog = () => {
             ))}
           </div>
 
-          {/* Products Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filtered.map((product, i) => (
               <motion.div
@@ -111,12 +98,7 @@ const Catalog = () => {
                 className="bg-card rounded-lg overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
               >
                 <div className="h-44 overflow-hidden relative">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  <img src={product.image} alt={product.name} className="w-full h-full object-cover" loading="lazy" />
                   {!product.inStock && (
                     <div className="absolute inset-0 bg-foreground/50 flex items-center justify-center">
                       <Badge variant="destructive">Rupture de stock</Badge>
@@ -127,17 +109,9 @@ const Catalog = () => {
                   <Badge variant="secondary" className="mb-2 text-xs">
                     {categories.find((c) => c.id === product.category)?.label}
                   </Badge>
-                  <h3 className="font-heading font-semibold text-foreground mb-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-primary font-bold text-lg mb-3">
-                    {product.price.toLocaleString("fr-FR")} FCFA
-                  </p>
-                  <Button
-                    className="w-full"
-                    disabled={!product.inStock}
-                    onClick={() => addToCart(product.id)}
-                  >
+                  <h3 className="font-heading font-semibold text-foreground mb-1">{product.name}</h3>
+                  <p className="text-primary font-bold text-lg mb-3">{product.price.toLocaleString("fr-FR")} FCFA</p>
+                  <Button className="w-full" disabled={!product.inStock} onClick={() => handleAdd(product)}>
                     <ShoppingCart size={16} />
                     Ajouter au panier
                   </Button>

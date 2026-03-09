@@ -3,7 +3,8 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground py-12">
+    <footer className="bg-foreground py-12 relative overflow-hidden">
+      <img src={logo} alt="" className="absolute inset-0 w-full h-full object-contain opacity-5 pointer-events-none brightness-0 invert" />
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-background/70 text-sm">
           <div>

@@ -129,4 +129,5 @@
   background-size: 60%;
   background-position: center;
   opacity: 0.03;
+  mix-blend-mode: multiply;
 }

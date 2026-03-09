@@ -113,19 +113,3 @@
   }
 }
 
-#root {
-  position: relative;
-}
-
-#root::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url('/src/assets/logo.png');
-  background-repeat: repeat;
-  background-size: 200px;
-  background-position: center;
-  opacity: 0.04;
-}

@@ -4,8 +4,8 @@ import logo from "@/assets/logo.png";
 const Footer = () => {
   return (
     <footer className="bg-foreground py-12 relative overflow-hidden">
-      <img src={logo} alt="" className="absolute inset-0 w-full h-full object-contain opacity-5 pointer-events-none brightness-0 invert" />
-      <div className="container mx-auto px-4">
+      <img src={logo} alt="" className="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none brightness-0 invert p-8" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 text-background/70 text-sm">
           <div>
             <img src={logo} alt="D&C Agro" className="h-14 w-auto mb-3 brightness-0 invert" />

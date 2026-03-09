@@ -116,10 +116,17 @@
 
 #root {
   position: relative;
-  background: hsl(var(--background));
 }
 
-#root > * {
-  position: relative;
-  z-index: 1;
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/src/assets/logo.png');
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  opacity: 0.03;
 }

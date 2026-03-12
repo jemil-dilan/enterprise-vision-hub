@@ -1,22 +1,26 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
-
-const navLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "Catalogue", href: "/catalogue" },
-  { label: "À Propos", href: "/#apropos" },
-  { label: "Équipe", href: "/equipe" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/#contact" },
-];
+import { useLanguage, t } from "@/context/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { lang, toggleLang } = useLanguage();
+  const n = translations.nav;
+
+  const navLinks = [
+    { label: t(n.home, lang), href: "/" },
+    { label: t(n.services, lang), href: "/#services" },
+    { label: t(n.catalog, lang), href: "/catalogue" },
+    { label: t(n.about, lang), href: "/#apropos" },
+    { label: t(n.team, lang), href: "/equipe" },
+    { label: t(n.faq, lang), href: "/faq" },
+    { label: t(n.contact, lang), href: "/#contact" },
+  ];
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
@@ -57,11 +61,19 @@ const Navbar = () => {
               </Link>
             )
           )}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            title={lang === "fr" ? "Switch to English" : "Passer en Français"}
+          >
+            <Globe size={16} />
+            {lang === "fr" ? "EN" : "FR"}
+          </button>
           <a
             href="/#contact"
             className="gradient-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity"
           >
-            Demander un devis
+            {t(n.quote, lang)}
           </a>
         </div>
 
@@ -106,12 +118,19 @@ const Navbar = () => {
                   </Link>
                 )
               )}
+              <button
+                onClick={() => { toggleLang(); setIsOpen(false); }}
+                className="flex items-center gap-1.5 text-foreground/80 hover:text-primary font-medium"
+              >
+                <Globe size={16} />
+                {lang === "fr" ? "English" : "Français"}
+              </button>
               <a
                 href="/#contact"
                 className="gradient-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold"
                 onClick={() => setIsOpen(false)}
               >
-                Demander un devis
+                {t(n.quote, lang)}
               </a>
             </div>
           </motion.div>

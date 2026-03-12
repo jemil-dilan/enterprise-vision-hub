@@ -34,6 +34,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <LanguageProvider>
         <CartProvider>
           <LoadingScreen isLoading={isLoading} />
           <Toaster />

@@ -38,4 +38,5 @@ export const useLanguage = () => {
 };
 
 /** Helper to pick the right translation */
-export const t = <T,>(obj: { fr: T; en: T }, lang: Language): T => obj[lang];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const t = (obj: { fr: any; en: any }, lang: Language) => obj[lang];

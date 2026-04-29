@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award, TrendingUp, Users, Target, Quote } from "lucide-react";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import founderPortrait from "@/assets/founder-portrait.png";
 
 const FounderTeamSection = () => {
   const { lang } = useLanguage();
@@ -19,8 +20,14 @@ const FounderTeamSection = () => {
 
           <div className="bg-card rounded-lg p-8 md:p-12 shadow-card max-w-3xl mx-auto relative">
             <Quote size={40} className="text-primary/20 absolute top-6 left-6" />
-            <div className="w-20 h-20 rounded-full gradient-primary mx-auto mb-6 flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-black text-2xl">DC</span>
+            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6">
+              <div className="absolute inset-0 rounded-full gradient-primary blur-md opacity-40" />
+              <img
+                src={founderPortrait}
+                alt="Fondateur & Directeur Général de D&C Agro"
+                loading="lazy"
+                className="relative w-full h-full rounded-full object-cover object-top ring-4 ring-primary/30 shadow-card-hover"
+              />
             </div>
             <h3 className="font-heading font-bold text-lg text-foreground mb-1">{t(f.founderRole, lang)}</h3>
             <p className="text-secondary font-semibold text-sm mb-6">D&C Agro</p>

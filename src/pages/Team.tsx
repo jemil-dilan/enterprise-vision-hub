@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Award, TrendingUp, Users, Target } from "lucide-react";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import founderPortrait from "@/assets/founder-portrait.png";
 
 const Team = () => {
   const { lang } = useLanguage();
@@ -56,8 +57,14 @@ const Team = () => {
               <p className="text-secondary font-semibold text-sm uppercase tracking-[0.15em] mb-2">{t(tp.founderTagline, lang)}</p>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">{t(tp.visionTitle, lang)}</h2>
               <div className="bg-card rounded-lg p-8 md:p-12 shadow-card">
-                <div className="w-24 h-24 rounded-full gradient-primary mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-primary-foreground font-heading font-black text-3xl">DC</span>
+                <div className="relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-6">
+                  <div className="absolute inset-0 rounded-full gradient-primary blur-md opacity-40" />
+                  <img
+                    src={founderPortrait}
+                    alt="Fondateur & Directeur Général de D&C Agro"
+                    loading="lazy"
+                    className="relative w-full h-full rounded-full object-cover object-top ring-4 ring-primary/30 shadow-card-hover"
+                  />
                 </div>
                 <h3 className="font-heading font-bold text-xl text-foreground mb-1">{t(tp.founderRole, lang)}</h3>
                 <p className="text-secondary font-semibold text-sm mb-6">D&C Agro</p>

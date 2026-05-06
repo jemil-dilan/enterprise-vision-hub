@@ -14,12 +14,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t(n.home, lang), href: "/" },
-    { label: t(n.services, lang), href: "/#services" },
-    { label: t(n.catalog, lang), href: "/catalogue" },
+    { label: t(n.services, lang), href: "/services" },
     { label: t(n.about, lang), href: "/#apropos" },
-    { label: t(n.team, lang), href: "/equipe" },
-    { label: t(n.faq, lang), href: "/faq" },
-    { label: t(n.contact, lang), href: "/#contact" },
+    { label: t(n.contact, lang), href: "/contact" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -69,12 +66,12 @@ const Navbar = () => {
             <Globe size={16} />
             {lang === "fr" ? "EN" : "FR"}
           </button>
-          <a
-            href="/#contact"
-            className="gradient-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity"
+          <Link
+            to="/contact"
+            className="gradient-accent text-secondary-foreground px-5 py-2.5 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity shadow-glow"
           >
             {t(n.quote, lang)}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -125,13 +122,13 @@ const Navbar = () => {
                 <Globe size={16} />
                 {lang === "fr" ? "English" : "Français"}
               </button>
-              <a
-                href="/#contact"
-                className="gradient-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold"
+              <Link
+                to="/contact"
+                className="gradient-accent text-secondary-foreground px-5 py-2 rounded-md text-sm font-semibold"
                 onClick={() => setIsOpen(false)}
               >
                 {t(n.quote, lang)}
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

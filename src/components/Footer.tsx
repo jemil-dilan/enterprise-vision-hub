@@ -8,7 +8,7 @@ const Footer = () => {
   const f = translations.footer;
   const servicesList = t(f.servicesList, lang);
   const linkLabels = t(f.linkLabels, lang);
-  const linkHrefs = ["/#accueil", "/#services", "/#apropos", "/equipe", "/#contact"];
+  const linkHrefs = ["/", "/services", "/#apropos", "/equipe", "/contact"];
 
   return (
     <footer className="bg-foreground py-12">

@@ -13,6 +13,56 @@ export const translations = {
     quote: { fr: "Demander un devis", en: "Request a quote" },
   },
 
+  // Avantages
+  advantages: {
+    tagline: { fr: "Pourquoi D&C", en: "Why D&C" },
+    title: { fr: "L'excellence à chaque étape", en: "Excellence at every step" },
+    items: {
+      fr: [
+        { title: "Fiabilité", desc: "Engagements tenus, qualité constante, transparence totale sur chaque livraison." },
+        { title: "Rapidité", desc: "Réseau logistique optimisé pour des délais courts, même en urgence maritime 24/7." },
+        { title: "Expertise", desc: "Plus de 15 ans au service de l'agro-industrie et du secteur portuaire africain." },
+        { title: "Proximité", desc: "Une équipe dédiée, à l'écoute, qui parle votre langue et comprend votre métier." },
+      ],
+      en: [
+        { title: "Reliability", desc: "Commitments kept, consistent quality, full transparency on every delivery." },
+        { title: "Speed", desc: "Optimized logistics network for short lead times, even 24/7 maritime emergencies." },
+        { title: "Expertise", desc: "Over 15 years serving African agro-industry and port operations." },
+        { title: "Proximity", desc: "A dedicated team that listens, speaks your language and understands your business." },
+      ],
+    },
+  },
+
+  // Réalisations teaser
+  realisations: {
+    tagline: { fr: "Nos références", en: "Our references" },
+    title: { fr: "Réalisations récentes", en: "Recent achievements" },
+    cta: { fr: "Voir toutes nos réalisations", en: "See all our achievements" },
+    items: {
+      fr: [
+        { title: "Approvisionnement Cargo Atlantica", subtitle: "Port de Douala · 2024" },
+        { title: "Équipement agro-industriel", subtitle: "Coopérative Centre · 2024" },
+        { title: "Logistique multi-sites", subtitle: "Afrique de l'Ouest · 2025" },
+      ],
+      en: [
+        { title: "Cargo Atlantica supply", subtitle: "Port of Douala · 2024" },
+        { title: "Agro-industrial equipment", subtitle: "Centre Cooperative · 2024" },
+        { title: "Multi-site logistics", subtitle: "West Africa · 2025" },
+      ],
+    },
+  },
+
+  // CTA final
+  finalCta: {
+    title: { fr: "Prêt à passer commande ?", en: "Ready to place an order?" },
+    subtitle: {
+      fr: "Discutons de votre besoin et obtenez un devis personnalisé sous 24 heures.",
+      en: "Let's discuss your needs and get a personalized quote within 24 hours.",
+    },
+    primary: { fr: "Demander un devis", en: "Request a quote" },
+    secondary: { fr: "Voir nos services", en: "See our services" },
+  },
+
   // Hero
   hero: {
     tagline: { fr: "Réflexion · Innovation · Solutions", en: "Thinking · Innovation · Solutions" },

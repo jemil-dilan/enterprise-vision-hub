@@ -7,8 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/context/CartContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 import LoadingScreen from "@/components/LoadingScreen";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
 import Index from "./pages/Index";
 import Team from "./pages/Team";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 import Catalog from "./pages/Catalog";
 import FAQ from "./pages/FAQ";
 import Login from "./pages/Login";
@@ -42,6 +45,8 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/equipe" element={<Team />} />
               <Route path="/catalogue" element={<Catalog />} />
               <Route path="/faq" element={<FAQ />} />
@@ -55,6 +60,7 @@ const App = () => {
               <Route path="/paiement" element={<Payment />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <WhatsAppFAB />
           </BrowserRouter>
         </CartProvider>
         </LanguageProvider>

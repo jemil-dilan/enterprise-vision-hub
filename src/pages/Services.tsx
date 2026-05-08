@@ -51,6 +51,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={seoTitle} description={seoDesc} canonical="/services" />
       <Navbar />
 
       {/* Hero */}

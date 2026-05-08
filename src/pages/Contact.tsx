@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -8,6 +9,13 @@ const Contact = () => {
   const { lang } = useLanguage();
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lang === "fr" ? "Contact D&C Agro | Devis & Partenariats sous 24h" : "Contact D&C Agro | Quotes & Partnerships within 24h"}
+        description={lang === "fr"
+          ? "Contactez D&C Agro pour un devis shipchandler, agro-industriel ou logistique. Notre équipe vous répond sous 24 heures."
+          : "Contact D&C Agro for a shipchandler, agro-industrial or logistics quote. Our team replies within 24 hours."}
+        canonical="/contact"
+      />
       <Navbar />
       <section className="pt-32 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 gradient-primary" />

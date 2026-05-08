@@ -3,6 +3,7 @@ import { Ship, Tractor, Truck, Briefcase, CheckCircle2, ArrowRight } from "lucid
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
 import serviceShip from "@/assets/service-ship.jpg";
@@ -13,6 +14,13 @@ import serviceConsulting from "@/assets/service-consulting.jpg";
 const Services = () => {
   const { lang } = useLanguage();
   const s = translations.services;
+
+  const seoTitle = lang === "fr"
+    ? "Services D&C Agro | Shipchandler, Agro-industrie, Logistique"
+    : "D&C Agro Services | Shipchandling, Agro-industry, Logistics";
+  const seoDesc = lang === "fr"
+    ? "Découvrez nos services : approvisionnement shipchandler, équipements agricoles, logistique multimodale et conseil technique pour acteurs maritimes et agro."
+    : "Discover our services: shipchandling supply, agricultural equipment, multimodal logistics and technical consulting for maritime and agro players.";
 
   const items = [
     {

@@ -15,8 +15,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-background/70 text-sm">
           <div>
-            <div className="bg-white/10 rounded-lg p-2 inline-block mb-3">
-              <img src={logo} alt="D&C Agro" className="h-12 w-auto brightness-0 invert" />
+            <div className="bg-background rounded-md px-3 py-2 inline-flex mb-3 shadow-sm border border-background/20">
+              <img src={logo} alt="D&C Agro" className="h-12 w-auto object-contain" />
             </div>
             <p className="leading-relaxed">{t(f.desc, lang)}</p>
             <p className="mt-2 italic text-background/50 text-xs">{t(f.motto, lang)}</p>

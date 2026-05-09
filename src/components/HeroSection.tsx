@@ -10,7 +10,14 @@ const HeroSection = () => {
 
   return (
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+      <img
+        src={heroBg}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute inset-0 hero-overlay" />
 
       <div className="relative z-10 container mx-auto px-4 text-center">

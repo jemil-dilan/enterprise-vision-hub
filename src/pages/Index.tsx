@@ -1,15 +1,19 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import SEO from "@/components/SEO";
-import ServicesSection from "@/components/ServicesSection";
-import AdvantagesSection from "@/components/AdvantagesSection";
-import StatsSection from "@/components/StatsSection";
-import FounderTeamSection from "@/components/FounderTeamSection";
-import AboutSection from "@/components/AboutSection";
-import RealisationsTeaser from "@/components/RealisationsTeaser";
-import FinalCTA from "@/components/FinalCTA";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const AdvantagesSection = lazy(() => import("@/components/AdvantagesSection"));
+const StatsSection = lazy(() => import("@/components/StatsSection"));
+const FounderTeamSection = lazy(() => import("@/components/FounderTeamSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const RealisationsTeaser = lazy(() => import("@/components/RealisationsTeaser"));
+const FinalCTA = lazy(() => import("@/components/FinalCTA"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+const SectionFallback = () => <div className="h-32" />;
 
 const Index = () => {
   return (
@@ -29,15 +33,17 @@ const Index = () => {
       />
       <Navbar />
       <HeroSection />
-      <ServicesSection />
-      <AdvantagesSection />
-      <StatsSection />
-      <FounderTeamSection />
-      <AboutSection />
-      <RealisationsTeaser />
-      <FinalCTA />
-      <ContactSection />
-      <Footer />
+      <Suspense fallback={<SectionFallback />}>
+        <ServicesSection />
+        <AdvantagesSection />
+        <StatsSection />
+        <FounderTeamSection />
+        <AboutSection />
+        <RealisationsTeaser />
+        <FinalCTA />
+        <ContactSection />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

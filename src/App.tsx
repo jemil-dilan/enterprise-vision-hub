@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,20 +9,20 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import LoadingScreen from "@/components/LoadingScreen";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 import Index from "./pages/Index";
-import Team from "./pages/Team";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import Catalog from "./pages/Catalog";
-import FAQ from "./pages/FAQ";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Admin from "./pages/Admin";
-import ShipchandlerLogin from "./pages/ShipchandlerLogin";
-import ShipchandlerCatalog from "./pages/ShipchandlerCatalog";
-import Subscriptions from "./pages/Subscriptions";
-import Checkout from "./pages/Checkout";
-import Payment from "./pages/Payment";
-import NotFound from "./pages/NotFound";
+const Team = lazy(() => import("./pages/Team"));
+const Services = lazy(() => import("./pages/Services"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Catalog = lazy(() => import("./pages/Catalog"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const Admin = lazy(() => import("./pages/Admin"));
+const ShipchandlerLogin = lazy(() => import("./pages/ShipchandlerLogin"));
+const ShipchandlerCatalog = lazy(() => import("./pages/ShipchandlerCatalog"));
+const Subscriptions = lazy(() => import("./pages/Subscriptions"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const Payment = lazy(() => import("./pages/Payment"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -43,6 +43,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <Suspense fallback={<div className="min-h-screen bg-background" />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
@@ -60,6 +61,7 @@ const App = () => {
               <Route path="/paiement" element={<Payment />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </Suspense>
             <WhatsAppFAB />
           </BrowserRouter>
         </CartProvider>

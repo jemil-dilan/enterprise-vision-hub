@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.png";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const Admin = () => {
   const [active, setActive] = useState("dashboard");

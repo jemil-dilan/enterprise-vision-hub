@@ -54,6 +54,16 @@ const Catalog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lang === "fr" ? "Catalogue D&C Agro | Équipements agricoles, irrigation & logistique" : "D&C Agro Catalog | Agricultural equipment, irrigation & logistics"}
+        description={lang === "fr"
+          ? "Catalogue D&C Agro : motopompes, semences, kits d'irrigation, équipements agro-industriels et services de livraison en Afrique."
+          : "D&C Agro catalog: pumps, seeds, irrigation kits, agro-industrial equipment and delivery services across Africa."}
+        canonical="/catalogue"
+        keywords={lang === "fr"
+          ? "catalogue agricole, motopompe Afrique, semences hybrides, kit irrigation goutte à goutte, équipement agro-industriel, achat en ligne agriculture"
+          : "agricultural catalog, water pump Africa, hybrid seeds, drip irrigation kit, agro-industrial equipment, online farming supplies"}
+      />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-12">

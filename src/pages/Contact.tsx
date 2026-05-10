@@ -15,6 +15,9 @@ const Contact = () => {
           ? "Contactez D&C Agro pour un devis shipchandler, agro-industriel ou logistique. Notre équipe vous répond sous 24 heures."
           : "Contact D&C Agro for a shipchandler, agro-industrial or logistics quote. Our team replies within 24 hours."}
         canonical="/contact"
+        keywords={lang === "fr"
+          ? "contact D&C Agro, devis shipchandler, devis agro-industriel, partenariat logistique, contact entreprise Afrique"
+          : "contact D&C Agro, shipchandler quote, agro-industrial quote, logistics partnership, Africa company contact"}
       />
       <Navbar />
       <section className="pt-32 pb-12 relative overflow-hidden">

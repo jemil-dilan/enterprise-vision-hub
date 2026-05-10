@@ -51,7 +51,14 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={seoTitle} description={seoDesc} canonical="/services" />
+      <SEO
+        title={seoTitle}
+        description={seoDesc}
+        canonical="/services"
+        keywords={lang === "fr"
+          ? "services shipchandler, avitaillement navires, équipements agricoles, motopompe, irrigation, logistique multimodale, conseil agro-industriel, Afrique de l'Ouest"
+          : "shipchandling services, ship supply, agricultural equipment, irrigation pumps, multimodal logistics, agro-industrial consulting, West Africa"}
+      />
       <Navbar />
 
       {/* Hero */}

@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://dnc-agro.lovable.app/sitemap.xml
+Sitemap: https://dnc-agro.vercel.app/sitemap.xml

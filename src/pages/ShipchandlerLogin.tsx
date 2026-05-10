@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const ShipchandlerLogin = () => {
   const navigate = useNavigate();

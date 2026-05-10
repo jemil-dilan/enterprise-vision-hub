@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,6 +24,12 @@ const Login = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <SEO
+        title={lang === "fr" ? "Connexion | D&C Agro" : "Sign in | D&C Agro"}
+        description={lang === "fr" ? "Connectez-vous à votre espace client D&C Agro." : "Sign in to your D&C Agro customer area."}
+        canonical="/connexion"
+        noindex
+      />
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/"><img src={logo} alt="D&C" className="h-16 mx-auto mb-4" /></Link>

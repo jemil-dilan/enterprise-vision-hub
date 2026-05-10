@@ -79,6 +79,7 @@ const Payment = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Paiement | D&C Agro" description="Paiement sécurisé D&C Agro (mobile money, carte, virement)." canonical="/paiement" noindex />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-8">

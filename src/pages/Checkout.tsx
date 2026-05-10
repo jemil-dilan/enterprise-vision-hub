@@ -13,6 +13,7 @@ import { useCart } from "@/context/CartContext";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -54,6 +55,7 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Commande | D&C Agro" description="Finalisez votre commande D&C Agro." canonical="/commande" noindex />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-8">

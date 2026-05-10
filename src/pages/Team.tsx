@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Award, TrendingUp, Users, Target } from "lucide-react";
 import { useLanguage, t } from "@/context/LanguageContext";
@@ -15,6 +16,16 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lang === "fr" ? "Équipe D&C Agro | Fondateur, Direction & Experts" : "D&C Agro Team | Founder, Leadership & Experts"}
+        description={lang === "fr"
+          ? "Découvrez l'équipe D&C Agro : fondateur visionnaire, direction et experts métiers en shipchandler, agro-industrie et logistique en Afrique."
+          : "Meet the D&C Agro team: visionary founder, leadership and field experts in shipchandling, agro-industry and logistics across Africa."}
+        canonical="/equipe"
+        keywords={lang === "fr"
+          ? "équipe D&C Agro, fondateur, direction, experts agro-industrie, dirigeants shipchandler Afrique"
+          : "D&C Agro team, founder, leadership, agro-industry experts, African shipchandler executives"}
+      />
       <Navbar />
 
       <section className="pt-24 pb-16 gradient-primary">

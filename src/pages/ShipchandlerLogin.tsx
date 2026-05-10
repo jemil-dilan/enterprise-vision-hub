@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const ShipchandlerLogin = () => {
   const navigate = useNavigate();
@@ -33,6 +34,12 @@ const ShipchandlerLogin = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lang === "fr" ? "Espace Shipchandler | D&C Agro" : "Shipchandler area | D&C Agro"}
+        description={lang === "fr" ? "Identification du navire pour accéder au catalogue shipchandler D&C Agro." : "Vessel identification to access D&C Agro shipchandler catalog."}
+        canonical="/shipchandler"
+        keywords={lang === "fr" ? "shipchandler, avitaillement navire, identification IMO, port Afrique" : "shipchandler, ship supply, IMO identification, Africa port"}
+      />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-12">

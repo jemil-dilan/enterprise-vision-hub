@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", password: "", confirmPassword: "" });
@@ -24,6 +25,12 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
+      <SEO
+        title={lang === "fr" ? "Inscription | D&C Agro" : "Sign up | D&C Agro"}
+        description={lang === "fr" ? "Créez votre compte client D&C Agro pour commander shipchandler, agro et logistique." : "Create your D&C Agro account to order shipchandler, agro and logistics."}
+        canonical="/inscription"
+        noindex
+      />
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/"><img src={logo} alt="D&C" className="h-16 mx-auto mb-4" /></Link>

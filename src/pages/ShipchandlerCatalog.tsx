@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
+import SEO from "@/components/SEO";
 
 const shipchandlerProducts = [
   { id: 101, name: "Pack Alimentation Équipage (30 jours)", category: "food", price: 1500000, unit: "pack", description: "Rations complètes pour 20 personnes" },

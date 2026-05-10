@@ -7,9 +7,11 @@ type SEOProps = {
   image?: string;
   type?: "website" | "article";
   jsonLd?: Record<string, any>;
+  keywords?: string;
+  noindex?: boolean;
 };
 
-const SITE_URL = "https://dnc-agro.lovable.app";
+const SITE_URL = "https://dnc-agro.vercel.app";
 
 const upsertMeta = (selector: string, attr: "name" | "property", key: string, content: string) => {
   let el = document.head.querySelector<HTMLMetaElement>(selector);
@@ -31,7 +33,7 @@ const upsertLink = (rel: string, href: string) => {
   el.setAttribute("href", href);
 };
 
-const SEO = ({ title, description, canonical, image, type = "website", jsonLd }: SEOProps) => {
+const SEO = ({ title, description, canonical, image, type = "website", jsonLd, keywords, noindex }: SEOProps) => {
   useEffect(() => {
     const url = canonical
       ? canonical.startsWith("http")
@@ -43,6 +45,15 @@ const SEO = ({ title, description, canonical, image, type = "website", jsonLd }:
     document.title = title;
     upsertMeta('meta[name="description"]', "name", "description", description);
     upsertLink("canonical", url);
+    if (keywords) {
+      upsertMeta('meta[name="keywords"]', "name", "keywords", keywords);
+    }
+    upsertMeta(
+      'meta[name="robots"]',
+      "name",
+      "robots",
+      noindex ? "noindex, nofollow" : "index, follow"
+    );
 
     upsertMeta('meta[property="og:title"]', "property", "og:title", title);
     upsertMeta('meta[property="og:description"]', "property", "og:description", description);
@@ -64,7 +75,7 @@ const SEO = ({ title, description, canonical, image, type = "website", jsonLd }:
       script.text = JSON.stringify(jsonLd);
       document.head.appendChild(script);
     }
-  }, [title, description, canonical, image, type, jsonLd]);
+  }, [title, description, canonical, image, type, jsonLd, keywords, noindex]);
 
   return null;
 };

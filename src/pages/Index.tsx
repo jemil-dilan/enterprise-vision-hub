@@ -22,12 +22,13 @@ const Index = () => {
         title="D&C Agro | Shipchandler, Agro-industrie & Logistique en Afrique"
         description="D&C Agro : approvisionnement shipchandler 24/7, équipements agro-industriels, logistique et conseil. Partenaire de confiance des ports et exploitations."
         canonical="/"
+        keywords="shipchandler, avitaillement navires, agro-industrie, équipements agricoles, logistique Afrique, approvisionnement maritime, D&C Agro, ship supply, agriculture Afrique de l'Ouest"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "D&C Agro",
-          url: "https://dnc-agro.lovable.app",
-          logo: "https://dnc-agro.lovable.app/og-image.jpg",
+          url: "https://dnc-agro.vercel.app",
+          logo: "https://dnc-agro.vercel.app/og-image.jpg",
           sameAs: [],
         }}
       />

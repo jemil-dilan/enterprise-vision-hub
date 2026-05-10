@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MessageCircle, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,16 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lang === "fr" ? "FAQ D&C Agro | Questions fréquentes shipchandler & agro" : "D&C Agro FAQ | Shipchandler & agro frequently asked questions"}
+        description={lang === "fr"
+          ? "Réponses aux questions fréquentes sur les services D&C Agro : shipchandler, livraisons, paiements, abonnements et logistique."
+          : "Answers to frequently asked questions about D&C Agro services: shipchandler, deliveries, payments, subscriptions and logistics."}
+        canonical="/faq"
+        keywords={lang === "fr"
+          ? "FAQ D&C Agro, questions shipchandler, livraison Afrique, paiement mobile money, support client agro"
+          : "D&C Agro FAQ, shipchandler questions, Africa delivery, mobile money payment, agro customer support"}
+      />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-12">

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { useLanguage, t } from "@/context/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -18,6 +19,16 @@ const Subscriptions = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={lang === "fr" ? "Abonnements D&C Agro | Forfaits approvisionnement & logistique" : "D&C Agro Subscriptions | Supply & logistics plans"}
+        description={lang === "fr"
+          ? "Abonnements D&C Agro : forfaits flexibles d'approvisionnement shipchandler, agro-industriel et logistique avec paiement mobile money ou carte."
+          : "D&C Agro subscriptions: flexible plans for shipchandler, agro-industrial supply and logistics with mobile money or card payment."}
+        canonical="/abonnements"
+        keywords={lang === "fr"
+          ? "abonnement shipchandler, forfait approvisionnement, abonnement agro-industriel, paiement mobile money Afrique"
+          : "shipchandler subscription, supply plan, agro-industrial subscription, mobile money Africa"}
+      />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-12">

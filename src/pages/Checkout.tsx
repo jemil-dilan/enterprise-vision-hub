@@ -55,6 +55,7 @@ const Checkout = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Commande | D&C Agro" description="Finalisez votre commande D&C Agro." canonical="/commande" noindex />
       <Navbar />
       <div className="pt-20 pb-16">
         <div className="bg-primary/5 py-8">

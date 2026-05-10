@@ -52,6 +52,7 @@ const Admin = () => {
   return (
     <div className="min-h-screen bg-background flex">
       <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-card border-r border-border transform transition-transform md:relative md:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        {null}
         <div className="flex items-center justify-between p-4 border-b border-border">
           <Link to="/" className="flex items-center gap-2"><img src={logo} alt="D&C" className="h-10" /><span className="font-heading font-bold text-foreground text-sm">Admin</span></Link>
           <button className="md:hidden text-foreground" onClick={() => setSidebarOpen(false)}><X size={20} /></button>

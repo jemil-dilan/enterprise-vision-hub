@@ -39,7 +39,7 @@ const ContactSection = () => {
                 <div className="w-10 h-10 rounded-md gradient-primary flex items-center justify-center shrink-0"><Phone size={18} className="text-primary-foreground" /></div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t(c.phone, lang)}</p>
-                  <p className="text-foreground font-medium">+123 456 789 00</p>
+                  <p className="text-foreground font-medium">+237 698 737 950</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

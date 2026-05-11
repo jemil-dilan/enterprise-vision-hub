@@ -46,7 +46,7 @@ const ContactSection = () => {
                 <div className="w-10 h-10 rounded-md gradient-primary flex items-center justify-center shrink-0"><MapPin size={18} className="text-primary-foreground" /></div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t(c.address, lang)}</p>
-                  <p className="text-foreground font-medium">Zone Industrielle, Ville</p>
+                  <p className="text-foreground font-medium">Douala, Akwa — MTN Commercial, face Restaurant « La petite villagoeis »</p>
                 </div>
               </div>
             </div>

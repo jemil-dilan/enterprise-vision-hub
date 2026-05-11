@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const PHONE = "237600000000"; // TODO: real number
+const PHONE = "237698737950";
 
 const WhatsAppIcon = ({ size = 28, className }: { size?: number; className?: string }) => (
   <svg

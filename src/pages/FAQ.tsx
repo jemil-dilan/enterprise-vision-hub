@@ -12,6 +12,18 @@ const FAQ = () => {
   const f = translations.faq;
   const faqItems = t(f.categories, lang);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.flatMap((section: any) =>
+      section.questions.map((q: any) => ({
+        "@type": "Question",
+        name: q.q,
+        acceptedAnswer: { "@type": "Answer", text: q.a },
+      }))
+    ),
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -23,6 +35,7 @@ const FAQ = () => {
         keywords={lang === "fr"
           ? "FAQ D&C Agro, questions shipchandler Douala, livraison Cameroun, paiement MTN MoMo Orange Money, support client agro Cameroun"
           : "D&C Agro FAQ, shipchandler Douala questions, Cameroon delivery, MTN MoMo Orange Money payment, agro customer support Cameroon"}
+        jsonLd={faqJsonLd}
       />
       <Navbar />
       <div className="pt-20 pb-16">

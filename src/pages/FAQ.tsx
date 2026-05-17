@@ -15,7 +15,7 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={lang === "fr" ? "FAQ D&C Agro | Shipchandler Douala, Livraison & Paiement Cameroun" : "D&C Agro FAQ | Shipchandler Douala, Delivery & Payment Cameroon"}
+        title={lang === "fr" ? "FAQ D&C Agro | Shipchandler Douala & Livraison Cameroun" : "D&C Agro FAQ | Shipchandler Douala & Delivery Cameroon"}
         description={lang === "fr"
           ? "Questions fréquentes D&C Agro : shipchandler au port de Douala, délais de livraison, paiement mobile money, abonnements et logistique au Cameroun."
           : "D&C Agro FAQ: shipchandling at Douala port, delivery times, mobile money payment, subscriptions and logistics in Cameroon."}

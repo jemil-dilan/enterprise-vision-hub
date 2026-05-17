@@ -20,14 +20,14 @@ const Subscriptions = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={lang === "fr" ? "Abonnements D&C Agro | Forfaits approvisionnement & logistique" : "D&C Agro Subscriptions | Supply & logistics plans"}
+        title={lang === "fr" ? "Abonnements D&C Agro | Forfaits Shipchandler & Agro Cameroun" : "D&C Agro Plans | Shipchandler & Agro Subscriptions Cameroon"}
         description={lang === "fr"
-          ? "Abonnements D&C Agro : forfaits flexibles d'approvisionnement shipchandler, agro-industriel et logistique avec paiement mobile money ou carte."
-          : "D&C Agro subscriptions: flexible plans for shipchandler, agro-industrial supply and logistics with mobile money or card payment."}
+          ? "Forfaits flexibles D&C Agro pour shipchandler, agro-industrie et logistique au Cameroun. Paiement Orange Money, MTN MoMo ou carte."
+          : "Flexible D&C Agro plans for shipchandler, agro-industry and logistics in Cameroon. Pay with Orange Money, MTN MoMo or card."}
         canonical="/abonnements"
         keywords={lang === "fr"
-          ? "abonnement shipchandler, forfait approvisionnement, abonnement agro-industriel, paiement mobile money Afrique"
-          : "shipchandler subscription, supply plan, agro-industrial subscription, mobile money Africa"}
+          ? "abonnement shipchandler Cameroun, forfait approvisionnement Douala, abonnement agro-industriel, paiement MTN MoMo, paiement Orange Money Cameroun"
+          : "shipchandler subscription Cameroon, supply plan Douala, agro-industrial subscription, MTN MoMo payment, Orange Money Cameroon"}
       />
       <Navbar />
       <div className="pt-20 pb-16">

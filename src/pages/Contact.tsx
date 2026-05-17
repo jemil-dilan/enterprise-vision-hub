@@ -10,14 +10,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={lang === "fr" ? "Contact D&C Agro | Devis & Partenariats sous 24h" : "Contact D&C Agro | Quotes & Partnerships within 24h"}
+        title={lang === "fr" ? "Contact D&C Agro Douala | Devis Shipchandler sous 24h" : "Contact D&C Agro Douala | Shipchandler Quote within 24h"}
         description={lang === "fr"
-          ? "Contactez D&C Agro pour un devis shipchandler, agro-industriel ou logistique. Notre équipe vous répond sous 24 heures."
-          : "Contact D&C Agro for a shipchandler, agro-industrial or logistics quote. Our team replies within 24 hours."}
+          ? "Contactez D&C Agro à Douala (Akwa) : devis shipchandler, agro-industriel ou logistique au Cameroun. Réponse sous 24h, WhatsApp +237 698 737 950."
+          : "Contact D&C Agro in Douala (Akwa): shipchandler, agro-industrial or logistics quote in Cameroon. Reply within 24h, WhatsApp +237 698 737 950."}
         canonical="/contact"
         keywords={lang === "fr"
-          ? "contact D&C Agro, devis shipchandler, devis agro-industriel, partenariat logistique, contact entreprise Afrique"
-          : "contact D&C Agro, shipchandler quote, agro-industrial quote, logistics partnership, Africa company contact"}
+          ? "contact D&C Agro Douala, devis shipchandler Cameroun, devis agro-industriel, contact entreprise Douala Akwa, WhatsApp shipchandler"
+          : "contact D&C Agro Douala, shipchandler quote Cameroon, agro-industrial quote, Douala Akwa company contact, WhatsApp shipchandler"}
       />
       <Navbar />
       <section className="pt-32 pb-12 relative overflow-hidden">

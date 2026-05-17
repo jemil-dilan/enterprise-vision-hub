@@ -55,7 +55,7 @@ const Catalog = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={lang === "fr" ? "Catalogue D&C Agro | Motopompes, Semences & Irrigation Cameroun" : "D&C Agro Catalog | Pumps, Seeds & Irrigation Cameroon"}
+        title={lang === "fr" ? "Catalogue D&C Agro | Motopompes & Irrigation Cameroun" : "D&C Agro Catalog | Pumps & Irrigation Cameroon"}
         description={lang === "fr"
           ? "Catalogue en ligne D&C Agro : motopompes, semences hybrides, kits irrigation goutte-à-goutte et équipements agro-industriels livrés au Cameroun."
           : "D&C Agro online catalog: pumps, hybrid seeds, drip irrigation kits and agro-industrial equipment delivered across Cameroon."}

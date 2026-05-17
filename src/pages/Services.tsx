@@ -16,8 +16,8 @@ const Services = () => {
   const s = translations.services;
 
   const seoTitle = lang === "fr"
-    ? "Services Shipchandler Douala, Agro-industrie & Logistique | D&C Agro"
-    : "Shipchandler Douala, Agro-industry & Logistics Services | D&C Agro";
+    ? "Services D&C Agro | Shipchandler Douala & Agro-industrie"
+    : "D&C Agro Services | Shipchandler Douala & Agro-industry";
   const seoDesc = lang === "fr"
     ? "Shipchandler 24/7 au port de Douala, motopompes, irrigation, logistique multimodale et conseil agro-industriel au Cameroun. Devis sous 24h."
     : "24/7 shipchandling at Douala port, pumps, irrigation, multimodal logistics and agro-industrial consulting in Cameroon. Quote within 24h.";

@@ -19,10 +19,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="D&C Agro | Shipchandler, Agro-industrie & Logistique en Afrique"
-        description="D&C Agro : approvisionnement shipchandler 24/7, équipements agro-industriels, logistique et conseil. Partenaire de confiance des ports et exploitations."
+        title="D&C Agro | Shipchandler Douala & Agro-industrie Cameroun"
+        description="Shipchandler à Douala, avitaillement navires 24/7, équipements agro-industriels et logistique au Cameroun. Devis sous 24h."
         canonical="/"
-        keywords="shipchandler, avitaillement navires, agro-industrie, équipements agricoles, logistique Afrique, approvisionnement maritime, D&C Agro, ship supply, agriculture Afrique de l'Ouest"
+        keywords="shipchandler Douala, shipchandler Cameroun, avitaillement navires Douala, port de Douala, agro-industrie Cameroun, équipements agricoles Cameroun, logistique portuaire Douala, D&C Agro"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",

@@ -16,11 +16,11 @@ const Services = () => {
   const s = translations.services;
 
   const seoTitle = lang === "fr"
-    ? "Services D&C Agro | Shipchandler, Agro-industrie, Logistique"
-    : "D&C Agro Services | Shipchandling, Agro-industry, Logistics";
+    ? "Services Shipchandler Douala, Agro-industrie & Logistique | D&C Agro"
+    : "Shipchandler Douala, Agro-industry & Logistics Services | D&C Agro";
   const seoDesc = lang === "fr"
-    ? "Découvrez nos services : approvisionnement shipchandler, équipements agricoles, logistique multimodale et conseil technique pour acteurs maritimes et agro."
-    : "Discover our services: shipchandling supply, agricultural equipment, multimodal logistics and technical consulting for maritime and agro players.";
+    ? "Shipchandler 24/7 au port de Douala, motopompes, irrigation, logistique multimodale et conseil agro-industriel au Cameroun. Devis sous 24h."
+    : "24/7 shipchandling at Douala port, pumps, irrigation, multimodal logistics and agro-industrial consulting in Cameroon. Quote within 24h.";
 
   const items = [
     {
@@ -56,8 +56,8 @@ const Services = () => {
         description={seoDesc}
         canonical="/services"
         keywords={lang === "fr"
-          ? "services shipchandler, avitaillement navires, équipements agricoles, motopompe, irrigation, logistique multimodale, conseil agro-industriel, Afrique de l'Ouest"
-          : "shipchandling services, ship supply, agricultural equipment, irrigation pumps, multimodal logistics, agro-industrial consulting, West Africa"}
+          ? "shipchandler Douala, avitaillement navires Cameroun, port de Douala, équipements agricoles Cameroun, motopompe agricole, kit irrigation, logistique portuaire Douala, conseil agro-industriel Afrique centrale"
+          : "shipchandler Douala, ship supply Cameroon, Douala port, agricultural equipment Cameroon, irrigation pumps, port logistics Douala, agro-industrial consulting Central Africa"}
       />
       <Navbar />
 

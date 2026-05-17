@@ -15,14 +15,14 @@ const FAQ = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={lang === "fr" ? "FAQ D&C Agro | Questions fréquentes shipchandler & agro" : "D&C Agro FAQ | Shipchandler & agro frequently asked questions"}
+        title={lang === "fr" ? "FAQ D&C Agro | Shipchandler Douala, Livraison & Paiement Cameroun" : "D&C Agro FAQ | Shipchandler Douala, Delivery & Payment Cameroon"}
         description={lang === "fr"
-          ? "Réponses aux questions fréquentes sur les services D&C Agro : shipchandler, livraisons, paiements, abonnements et logistique."
-          : "Answers to frequently asked questions about D&C Agro services: shipchandler, deliveries, payments, subscriptions and logistics."}
+          ? "Questions fréquentes D&C Agro : shipchandler au port de Douala, délais de livraison, paiement mobile money, abonnements et logistique au Cameroun."
+          : "D&C Agro FAQ: shipchandling at Douala port, delivery times, mobile money payment, subscriptions and logistics in Cameroon."}
         canonical="/faq"
         keywords={lang === "fr"
-          ? "FAQ D&C Agro, questions shipchandler, livraison Afrique, paiement mobile money, support client agro"
-          : "D&C Agro FAQ, shipchandler questions, Africa delivery, mobile money payment, agro customer support"}
+          ? "FAQ D&C Agro, questions shipchandler Douala, livraison Cameroun, paiement MTN MoMo Orange Money, support client agro Cameroun"
+          : "D&C Agro FAQ, shipchandler Douala questions, Cameroon delivery, MTN MoMo Orange Money payment, agro customer support Cameroon"}
       />
       <Navbar />
       <div className="pt-20 pb-16">

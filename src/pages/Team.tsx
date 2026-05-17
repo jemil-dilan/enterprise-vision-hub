@@ -17,14 +17,14 @@ const Team = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={lang === "fr" ? "Équipe D&C Agro | Fondateur, Direction & Experts" : "D&C Agro Team | Founder, Leadership & Experts"}
+        title={lang === "fr" ? "Équipe D&C Agro | Fondateur & Experts Shipchandler Cameroun" : "D&C Agro Team | Founder & Shipchandler Experts Cameroon"}
         description={lang === "fr"
-          ? "Découvrez l'équipe D&C Agro : fondateur visionnaire, direction et experts métiers en shipchandler, agro-industrie et logistique en Afrique."
-          : "Meet the D&C Agro team: visionary founder, leadership and field experts in shipchandling, agro-industry and logistics across Africa."}
+          ? "Découvrez l'équipe D&C Agro à Douala : fondateur, direction et experts shipchandler, agro-industrie et logistique au Cameroun."
+          : "Meet the D&C Agro team in Douala: founder, leadership and experts in shipchandling, agro-industry and logistics in Cameroon."}
         canonical="/equipe"
         keywords={lang === "fr"
-          ? "équipe D&C Agro, fondateur, direction, experts agro-industrie, dirigeants shipchandler Afrique"
-          : "D&C Agro team, founder, leadership, agro-industry experts, African shipchandler executives"}
+          ? "équipe D&C Agro, fondateur D&C Agro, direction, experts agro-industrie Cameroun, dirigeants shipchandler Douala"
+          : "D&C Agro team, D&C Agro founder, leadership, agro-industry experts Cameroon, shipchandler executives Douala"}
       />
       <Navbar />
 

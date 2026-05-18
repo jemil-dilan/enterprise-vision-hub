@@ -7,6 +7,23 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const Contact = () => {
   const { lang } = useLanguage();
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "D&C Agro",
+    image: "https://dnc-agro.lovable.app/og-image.jpg",
+    url: "https://dnc-agro.lovable.app/contact",
+    telephone: "+237698737950",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Akwa, MTN Commercial, face Restaurant La Petite Villageoise",
+      addressLocality: "Douala",
+      addressCountry: "CM",
+    },
+    areaServed: "CM",
+    sameAs: [],
+  };
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -18,6 +35,7 @@ const Contact = () => {
         keywords={lang === "fr"
           ? "contact D&C Agro Douala, devis shipchandler Cameroun, devis agro-industriel, contact entreprise Douala Akwa, WhatsApp shipchandler"
           : "contact D&C Agro Douala, shipchandler quote Cameroon, agro-industrial quote, Douala Akwa company contact, WhatsApp shipchandler"}
+        jsonLd={localBusinessJsonLd}
       />
       <Navbar />
       <section className="pt-32 pb-12 relative overflow-hidden">

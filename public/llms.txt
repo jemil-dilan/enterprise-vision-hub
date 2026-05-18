@@ -1,0 +1,14 @@
+# D&C Agro
+
+> Shipchandler à Douala et fournisseur d'équipements agro-industriels et de logistique au Cameroun. Avitaillement des navires 24/7, motopompes, irrigation, semences et conseil.
+
+## Pages
+
+- [Accueil](/): Présentation de D&C Agro, shipchandler et agro-industrie au Cameroun.
+- [Services](/services): Shipchandler, équipements agricoles, logistique et conseil.
+- [Catalogue](/catalogue): Motopompes, semences, kits d'irrigation et équipements agro-industriels.
+- [Abonnements](/abonnements): Forfaits récurrents shipchandler et agro pour entreprises.
+- [Shipchandler](/shipchandler): Service dédié d'avitaillement des navires au port de Douala.
+- [Équipe](/equipe): Fondateur et experts de D&C Agro à Douala.
+- [FAQ](/faq): Livraison, paiement (MTN MoMo, Orange Money), support client.
+- [Contact](/contact): Douala (Akwa), devis sous 24h, WhatsApp +237 698 737 950.

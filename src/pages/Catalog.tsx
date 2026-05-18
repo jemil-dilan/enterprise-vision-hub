@@ -47,6 +47,39 @@ const Catalog = () => {
     return matchCat && matchSearch;
   });
 
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: lang === "fr" ? "Catalogue D&C Agro" : "D&C Agro Catalog",
+    url: "https://dnc-agro.lovable.app/catalogue",
+    description: lang === "fr"
+      ? "Catalogue d'équipements agro-industriels et de logistique livrés au Cameroun."
+      : "Catalog of agro-industrial and logistics equipment delivered across Cameroon.",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: mockProducts
+        .filter((p) => p.category !== "shipchandler")
+        .map((p, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          item: {
+            "@type": "Product",
+            name: p.name,
+            image: p.image,
+            category: p.category,
+            offers: {
+              "@type": "Offer",
+              price: p.price,
+              priceCurrency: "XAF",
+              availability: p.inStock
+                ? "https://schema.org/InStock"
+                : "https://schema.org/OutOfStock",
+            },
+          },
+        })),
+    },
+  };
+
   const handleAdd = (product: typeof mockProducts[0]) => {
     addItem({ id: product.id, name: product.name, price: product.price, image: product.image, category: product.category });
     toast({ title: t(ct.addedToCart, lang), description: product.name });
@@ -63,6 +96,7 @@ const Catalog = () => {
         keywords={lang === "fr"
           ? "catalogue agricole Cameroun, motopompe Douala, semences hybrides maïs, kit irrigation goutte à goutte, équipement agro-industriel Cameroun, achat en ligne agriculture Afrique"
           : "agricultural catalog Cameroon, water pump Douala, hybrid maize seeds, drip irrigation kit, agro-industrial equipment Cameroon, online farming Africa"}
+        jsonLd={collectionJsonLd}
       />
       <Navbar />
       <div className="pt-20 pb-16">

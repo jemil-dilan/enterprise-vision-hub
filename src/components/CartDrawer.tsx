@@ -18,7 +18,7 @@ const CartDrawer = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="relative">
+        <Button variant="outline" size="icon" className="relative" aria-label={t(c.title, lang)}>
           <ShoppingCart size={18} />
           {count > 0 && (
             <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs">{count}</Badge>
@@ -52,10 +52,10 @@ const CartDrawer = () => {
                       <h4 className="text-sm font-semibold text-foreground truncate">{item.product.name}</h4>
                       <p className="text-primary font-bold text-sm">{item.product.price.toLocaleString("fr-FR")} FCFA</p>
                       <div className="flex items-center gap-2 mt-1">
-                        <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => updateQuantity(item.product.id, item.quantity - 1)}><Minus size={12} /></Button>
+                        <Button variant="outline" size="icon" className="h-7 w-7" aria-label="Diminuer la quantité" onClick={() => updateQuantity(item.product.id, item.quantity - 1)}><Minus size={12} /></Button>
                         <span className="text-sm font-medium w-6 text-center">{item.quantity}</span>
-                        <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => updateQuantity(item.product.id, item.quantity + 1)}><Plus size={12} /></Button>
-                        <Button variant="ghost" size="icon" className="h-7 w-7 ml-auto text-destructive" onClick={() => removeItem(item.product.id)}><Trash2 size={14} /></Button>
+                        <Button variant="outline" size="icon" className="h-7 w-7" aria-label="Augmenter la quantité" onClick={() => updateQuantity(item.product.id, item.quantity + 1)}><Plus size={12} /></Button>
+                        <Button variant="ghost" size="icon" className="h-7 w-7 ml-auto text-destructive" aria-label={`Retirer ${item.product.name}`} onClick={() => removeItem(item.product.id)}><Trash2 size={14} /></Button>
                       </div>
                     </div>
                   </div>

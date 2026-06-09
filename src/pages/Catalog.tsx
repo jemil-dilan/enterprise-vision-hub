@@ -138,7 +138,7 @@ const Catalog = () => {
                 </div>
                 <div className="p-4">
                   <Badge variant="secondary" className="mb-2 text-xs">{categories.find((c) => c.id === product.category)?.label}</Badge>
-                  <h3 className="font-heading font-semibold text-foreground mb-1">{product.name}</h3>
+                  <h2 className="font-heading font-semibold text-foreground mb-1 text-base">{product.name}</h2>
                   <p className="text-primary font-bold text-lg mb-3">{product.price.toLocaleString("fr-FR")} FCFA</p>
                   <Button className="w-full" disabled={!product.inStock} onClick={() => handleAdd(product)}>
                     <ShoppingCart size={16} />
